@@ -1,2 +1,3 @@
 *.module.ts
 *.spec.ts
+*.html
