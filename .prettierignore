@@ -2,4 +2,5 @@
 .gitignore
 .nvmrc
 tsconfig.json
-.module.ts
+*.module.ts
+*.spec.ts
