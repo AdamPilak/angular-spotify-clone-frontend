@@ -3,6 +3,7 @@ hr {
   border-color: white;
 }
 
+//buttons and checkbox start
 ::ng-deep {
   p-button {
     cursor: pointer;
@@ -22,8 +23,6 @@ hr {
       &:hover {
         border-color: black !important;
       }
-
-      
 
       .fa {
         font-size: 1.2rem;
@@ -98,6 +97,9 @@ hr {
   }
 }
 
+//buttons and checkbox end
+
+//login start
 
 .login-container {
   display: flex;
@@ -124,7 +126,7 @@ hr {
   }
 
    .login-content {
-     max-width: 450px;
+     max-width: calc(450px + (2 * 1rem));
      width: 100%;
      margin: 1rem auto 0;
 
@@ -201,3 +203,5 @@ hr {
     }
  }
 }
+
+//login end
