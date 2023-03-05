@@ -13,6 +13,7 @@ import { NavigationComponent } from './layout/components/navigation/navigation.c
 import { SearchComponent } from './layout/components/search/search.component';
 import { FavoriteComponent } from './layout/components/favorite/favorite.component';
 import { TrackComponent } from './layout/components/track/track.component';
+import {ButtonModule} from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { TrackComponent } from './layout/components/track/track.component';
     BrowserModule,
     AppRoutingModule,
     DropdownModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
