@@ -4,6 +4,10 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+
+  :not(i, i::before, i::after) {
+    font-family: 'Rubik', sans-serif;
+  }
 }
 
 body {

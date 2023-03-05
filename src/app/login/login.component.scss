@@ -1,10 +1,103 @@
 hr {
+  margin: 12px 0 30px;
   border-color: white;
 }
 
-.btn {
-  border-radius: 50% !important;
+::ng-deep {
+  p-button {
+    cursor: pointer;
+    button {
+      display: flex;
+      justify-content: center;
+      border-radius: 3rem !important;
+      width: 100%;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.9rem !important;
+      padding: .9rem 0 !important;
+      border: 1px solid #666 !important;
+      gap: .5rem;
+      transition: 0s !important;
+
+      &:hover {
+        border-color: black !important;
+      }
+
+      
+
+      .fa {
+        font-size: 1.2rem;
+      }
+
+      .p-button-label {
+        flex: none;
+      }
+    }
+  }
+
+  .login-button-facebook {
+    button {
+      background: rgb(24, 119, 242) !important;
+    }
+  }
+  
+  .login-button-apple {
+    button {
+      background: black !important;
+    }
+  }
+
+  .login-button-google {
+    button {
+      background: white !important;
+      color: #666 !important;
+    }
+  }
+
+  .login-button {
+    padding: 1rem 2rem !important;
+    color: black !important;
+    background: rgb(30, 215, 96) !important;
+    border: none !important;
+
+    &:hover {
+      scale: 1.05;
+      background: rgb(30, 225, 96) !important;
+    }
+  }
+
+  .login-register-button {
+    button {
+      background: white !important;
+      color: #666 !important;
+    }
+  }
+
+  p-checkbox {
+    height: 16px;
+    width: 16px;
+    margin-right: .75rem;
+
+    .p-checkbox .p-checkbox-box.p-highlight {
+      background: green !important;
+      border-color: green !important;
+    }
+
+    div {
+      .p-checkbox-box {
+        border: 1px solid #666 !important;
+        border-radius: .15rem !important;
+        width: 16px !important;
+        height: 16px !important;
+      }
+
+      .p-checkbox-icon {
+        font-size: 10px !important;
+      }
+    }
+  }
 }
+
 
 .login-container {
   display: flex;
@@ -25,19 +118,85 @@ hr {
 
      .login-header-text {
        font-weight: 500;
-       font-size: 1.6rem;
+       font-size: 1.7rem;
      }
   }
 
    .login-content {
-     max-width: 500px;
+     max-width: 450px;
      width: 100%;
-     height: calc(100vh - 5rem);
-     margin: 0 auto;
+     margin: 1rem auto 0;
 
      .login-options {
       display: flex;
       flex-direction: column;
+
+      p, p-button {
+        margin-bottom: .75rem;
+      }
+
+      .login-options-text {
+        font-weight: 600;
+        font-size: 0.85rem;
+        text-align: center;
+      }
      }
+
+     .login-field-container {
+      margin-bottom: 1rem;
+
+      .login-field-label {
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: .5rem;
+      }
+     }
+
+     .login-input-container {
+      display: flex;
+      flex-direction: column;
+
+      .login-input {
+        font-size: 0.9rem;
+        padding: .9rem;
+        border: 1px solid #666;
+        border-radius: .15rem;
+        font-weight: 600;
+      
+        &:focus {
+          outline: black solid 2px
+        }
+      }
+     }
+
+     .login-forgot-password {
+      font-size: 1rem;
+      text-decoration: underline;
+      margin-bottom: 1.5rem;
+    }
+
+    .login-bottom-container {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+
+      @media(max-width: 768px) {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .login-remember-me-text {
+        font-size: .9rem;
+      }
+    }
+
+    .login-footer {
+      .login-footer-question {
+        text-align: center;
+        font-size: 1.1rem;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+      }
+    }
  }
 }

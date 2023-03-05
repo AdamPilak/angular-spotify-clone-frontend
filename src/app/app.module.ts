@@ -14,6 +14,8 @@ import { SearchComponent } from './layout/components/search/search.component';
 import { FavoriteComponent } from './layout/components/favorite/favorite.component';
 import { TrackComponent } from './layout/components/track/track.component';
 import {ButtonModule} from 'primeng/button';
+import {CheckboxModule} from 'primeng/checkbox';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import {ButtonModule} from 'primeng/button';
     BrowserModule,
     AppRoutingModule,
     DropdownModule,
-    ButtonModule
+    ButtonModule,
+    CheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
