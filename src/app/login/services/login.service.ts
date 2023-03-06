@@ -9,7 +9,7 @@ export class LoginService {
   constructor(private http: HttpClient) {}
 
   Login(email: string, password: string): Observable<Object> {
-    return this.http.post('localhost:8000/auth/login', {
+    return this.http.post('http://127.0.0.1:8000/auth/login', {
       email: email,
       password: password,
     });
