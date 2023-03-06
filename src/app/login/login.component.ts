@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   addUser(): void {
     localStorage.setItem('user', 'user');
-    this.router.navigate(['/dashboard/home']);
+    this.router.navigate(['home']);
   }
 
   logOut(): void {

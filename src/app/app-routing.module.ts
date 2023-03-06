@@ -12,24 +12,19 @@ import { RegisterComponent } from './login/components/register/register.componen
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'dashboard/home', pathMatch: 'full' },
-  
-  { path: 'login', component: LoginComponent, canActivate: [LoggedUserGuard]},
-  { path: 'register', component: RegisterComponent, canActivate: [LoggedUserGuard]},
-  { path: 'regain-access', component: RegainAccessComponent, canActivate: [LoggedUserGuard]},
-  { path: 'dashboard', redirectTo: 'dashboard/home' }, 
-  { 
-    path: 'dashboard', 
-    component: LayoutComponent,
-    canActivate: [AuthGuard],
+  { path: '', redirectTo: '/home', pathMatch: 'full'},
+  { path: '', component: LayoutComponent, canActivate: [AuthGuard], 
     children: [
       { path: 'home', component: HomeComponent,},
       { path: 'search', component: SearchComponent, },
       { path: 'favorite', component: FavoriteComponent,},
       { path: 'track', component: TrackComponent, },
-  ] 
- }
- 
+    ]  
+  },
+  
+  { path: 'login', component: LoginComponent, canActivate: [LoggedUserGuard] },
+  { path: 'register', component: RegisterComponent, canActivate: [LoggedUserGuard] },
+  { path: 'regain-access', component: RegainAccessComponent, canActivate: [LoggedUserGuard] }
 ];
 
 
