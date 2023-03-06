@@ -1,1 +1,38 @@
-<p>regain-access works!</p>
+<div class="regain-access-container">
+    <div class="regain-access-header">
+        <i class="regain-access-header-icon fa-brands fa-spotify"></i>
+        <p class="regain-access-header-text">Spotify</p>
+    </div>
+    <hr style="margin-top: 0">
+    <div class="regain-access-content">
+        <div class="regain-access-options">
+            <p class="regain-access-options-text">Aby kontynuować, zaloguj się do Spotify.</p>
+            <p-button label="kontynuuj z facebookiem" icon="fa brands fa-facebook" class="regain-access-button-facebook"></p-button>
+            <p-button label="kontynuuj z apple" icon="fa brands fa-apple" class="regain-access-button-apple"></p-button>
+            <p-button label="kontynuuj z google" icon="fa brands fa-google" class="regain-access-button-google"></p-button>
+        </div>
+        <hr>
+        <div class="regain-access-field-container">
+            <p class="regain-access-field-label">Podaj adres e-mail lub nazwa uzytkownika</p>
+            <div class="regain-access-input-container">
+                <input type="text" class="regain-access-input" placeholder="Podaj adres e-mail lub nazwa uzytkownika">
+                <p class="error-message"></p>
+            </div>
+        </div>
+      
+        <div class="regain-access-bottom-container mt-2">
+            <div class="regain-access-remember-me-container">
+                <p-checkbox [binary]="true" inputId="binary"></p-checkbox>
+                <label class="regain-access-remember-me-text" for="binary">Zapamiętaj mnie</label>
+            </div>
+            <p-button label="zaloguj się" styleClass="regain-access-button"></p-button>
+        </div>
+        
+        <hr>
+        <div class="regain-access-footer">
+            <p class="regain-access-footer-question">Nie masz jeszcze konta?</p>
+            <p-button label="zarejestruj się w spotify" class="regain-access-register-button"></p-button>
+        </div>
+    </div>
+</div>
+

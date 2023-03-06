@@ -1,0 +1,208 @@
+hr {
+    margin: 12px 0 30px;
+    border-color: white;
+  }
+  
+  //buttons and checkbox start
+  ::ng-deep {
+    p-button {
+      cursor: pointer;
+      button {
+        display: flex;
+        justify-content: center;
+        border-radius: 3rem !important;
+        width: 100%;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.9rem !important;
+        padding: .9rem 0 !important;
+        border: 1px solid #666 !important;
+        gap: .5rem;
+        transition: 0s !important;
+  
+        &:hover {
+          border-color: black !important;
+        }
+  
+        .fa {
+          font-size: 1.2rem;
+        }
+  
+        .p-button-label {
+          flex: none;
+        }
+      }
+    }
+  
+    .regain-access-button-facebook {
+      button {
+        background: rgb(24, 119, 242) !important;
+      }
+    }
+    
+    .regain-access-button-apple {
+      button {
+        background: black !important;
+      }
+    }
+  
+    .regain-access-button-google {
+      button {
+        background: white !important;
+        color: #666 !important;
+      }
+    }
+  
+    .regain-access-button {
+      padding: 1rem 2rem !important;
+      color: black !important;
+      background: rgb(30, 215, 96) !important;
+      border: none !important;
+  
+      &:hover {
+        scale: 1.05;
+        background: rgb(30, 225, 96) !important;
+      }
+    }
+  
+    .regain-access-register-button {
+      button {
+        background: white !important;
+        color: #666 !important;
+      }
+    }
+  
+    p-checkbox {
+      height: 16px;
+      width: 16px;
+      margin-right: .75rem;
+  
+      .p-checkbox .p-checkbox-box.p-highlight {
+        background: green !important;
+        border-color: green !important;
+      }
+  
+      div {
+        .p-checkbox-box {
+          border: 1px solid #666 !important;
+          border-radius: .15rem !important;
+          width: 16px !important;
+          height: 16px !important;
+        }
+  
+        .p-checkbox-icon {
+          font-size: 10px !important;
+        }
+      }
+    }
+  }
+  
+  //buttons and checkbox end
+  
+  //regain-access start
+  
+  .regain-access-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    padding: 1rem;
+  
+    .regain-access-header {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       height: 5rem;
+  
+       .regain-access-header-icon {
+         font-size: 2.8rem;
+         margin-right: 0.3rem;
+       }
+  
+       .regain-access-header-text {
+         font-weight: 500;
+         font-size: 1.7rem;
+       }
+    }
+  
+     .regain-access-content {
+       max-width: 450px;
+       width: 100%;
+       margin: 1rem auto 0;
+  
+       .regain-access-options {
+        display: flex;
+        flex-direction: column;
+  
+        p, p-button {
+          margin-bottom: .75rem;
+        }
+  
+        .regain-access-options-text {
+          font-weight: 600;
+          font-size: 0.85rem;
+          text-align: center;
+        }
+       }
+  
+       .regain-access-field-container {
+        margin-bottom: 1rem;
+  
+        .regain-access-field-label {
+          font-size: 0.85rem;
+          font-weight: 600;
+          margin-bottom: .5rem;
+        }
+       }
+  
+       .regain-access-input-container {
+        display: flex;
+        flex-direction: column;
+  
+        .regain-access-input {
+          font-size: 0.9rem;
+          padding: .9rem;
+          border: 1px solid #666;
+          border-radius: .15rem;
+          font-weight: 600;
+        
+          &:focus {
+            outline: black solid 2px
+          }
+        }
+       }
+  
+       .regain-access-forgot-password {
+        font-size: 1rem;
+        text-decoration: underline;
+        margin-bottom: 1.5rem;
+      }
+  
+      .regain-access-bottom-container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+  
+        @media(max-width: 768px) {
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+  
+        .regain-access-remember-me-text {
+          font-size: .9rem;
+        }
+      }
+  
+      .regain-access-footer {
+        .regain-access-footer-question {
+          text-align: center;
+          font-size: 1.1rem;
+          font-weight: 500;
+          margin-bottom: 1.5rem;
+        }
+      }
+   }
+  }
+  
+  //regain-access end
+  
