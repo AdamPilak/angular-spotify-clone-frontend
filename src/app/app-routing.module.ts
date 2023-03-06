@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'search', component: SearchComponent, canActivate: [AuthGuard] },
   { path: 'favorite', component: FavoriteComponent, canActivate: [AuthGuard],
     children: [
-      {path: 'track', component: TrackComponent,pathMatch: 'full' }
+      {path: 'track', component: TrackComponent}
     ] 
   }, 
 
