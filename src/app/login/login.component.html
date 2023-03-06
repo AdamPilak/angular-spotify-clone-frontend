@@ -22,12 +22,9 @@
     </div>
     <hr />
     <div class="login-field-container">
-      <p class="login-field-label">Adres e-mail lub nazwa uzytkownika</p>
+      <p class="login-field-label">Adres e-mail</p>
       <div class="login-input-container">
-        <input
-          type="text"
-          class="login-input"
-          placeholder="Adres e-mail lub nazwa uzytkownika" />
+        <input type="text" class="login-input" placeholder="Adres e-mail" />
         <p class="error-message"></p>
       </div>
     </div>
@@ -48,7 +45,10 @@
           >Zapamiętaj mnie</label
         >
       </div>
-      <p-button label="zaloguj się" styleClass="login-button"></p-button>
+      <p-button
+        label="zaloguj się"
+        styleClass="login-button"
+        (onClick)="addUser()"></p-button>
     </div>
     <hr />
     <div class="login-footer">
@@ -60,3 +60,8 @@
     </div>
   </div>
 </div>
+
+<p-button
+  label="wyloguj się"
+  styleClass="login-button"
+  (click)="logOut()"></p-button>
