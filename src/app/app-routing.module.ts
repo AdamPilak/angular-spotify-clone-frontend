@@ -10,7 +10,7 @@ import { RegisterComponent } from './login/components/register/register.componen
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full'},
+  { path: '', redirectTo: 'home', pathMatch: 'full'},
   
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent },
@@ -18,9 +18,12 @@ const routes: Routes = [
 
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'search', component: SearchComponent, canActivate: [AuthGuard] },
-  { path: 'favorite', component: FavoriteComponent, canActivate: [AuthGuard] }, 
+  { path: 'favorite', component: FavoriteComponent, canActivate: [AuthGuard],
+    children: [
+      {path: 'track', component: TrackComponent,pathMatch: 'full' }
+    ] 
+  }, 
 
-  { path: 'track', component: TrackComponent, canActivate: [AuthGuard] }, 
 ];
 
 
