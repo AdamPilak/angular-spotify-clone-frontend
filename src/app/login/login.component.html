@@ -1,43 +1,62 @@
 <div class="login-container">
-    <div class="login-header">
-        <i class="login-header-icon fa-brands fa-spotify"></i>
-        <p class="login-header-text">Spotify</p>
+  <div class="login-header">
+    <i class="login-header-icon fa-brands fa-spotify"></i>
+    <p class="login-header-text">Spotify</p>
+  </div>
+  <hr style="margin-top: 0" />
+  <div class="login-content">
+    <div class="login-options">
+      <p class="login-options-text">Aby kontynuować, zaloguj się do Spotify.</p>
+      <p-button
+        label="kontynuuj z facebookiem"
+        icon="fa brands fa-facebook"
+        class="login-button-facebook"></p-button>
+      <p-button
+        label="kontynuuj z apple"
+        icon="fa brands fa-apple"
+        class="login-button-apple"></p-button>
+      <p-button
+        label="kontynuuj z google"
+        icon="fa brands fa-google"
+        class="login-button-google"></p-button>
     </div>
-    <hr style="margin-top: 0">
-    <div class="login-content">
-        <div class="login-options">
-            <p class="login-options-text">Aby kontynuować, zaloguj się do Spotify.</p>
-            <p-button label="kontynuuj z facebookiem" icon="fa brands fa-facebook" class="login-button-facebook"></p-button>
-            <p-button label="kontynuuj z apple" icon="fa brands fa-apple" class="login-button-apple"></p-button>
-            <p-button label="kontynuuj z google" icon="fa brands fa-google" class="login-button-google"></p-button>
-        </div>
-        <hr>
-        <div class="login-field-container">
-            <p class="login-field-label">Adres e-mail lub nazwa uzytkownika</p>
-            <div class="login-input-container">
-                <input type="text" class="login-input" placeholder="Adres e-mail lub nazwa uzytkownika">
-                <p class="error-message"></p>
-            </div>
-        </div>
-        <div class="login-field-container">
-            <p class="login-field-label">Hasło</p>
-            <div class="login-input-container">
-                <input type="text" class="login-input" placeholder="Hasło">
-                <p class="error-message"></p>
-            </div>
-        </div>
-        <p class="login-forgot-password">Nie pamiętasz hasła?</p>
-        <div class="login-bottom-container">
-            <div class="login-remember-me-container">
-                <p-checkbox [binary]="true" inputId="binary"></p-checkbox>
-                <label class="login-remember-me-text" for="binary">Zapamiętaj mnie</label>
-            </div>
-            <p-button label="zaloguj się" styleClass="login-button"></p-button>
-        </div>
-        <hr>
-        <div class="login-footer">
-            <p class="login-footer-question">Nie masz jeszcze konta?</p>
-            <p-button label="zarejestruj się w spotify" class="login-register-button"></p-button>
-        </div>
+    <hr />
+    <div class="login-field-container">
+      <p class="login-field-label">Adres e-mail lub nazwa uzytkownika</p>
+      <div class="login-input-container">
+        <input
+          type="text"
+          class="login-input"
+          placeholder="Adres e-mail lub nazwa uzytkownika" />
+        <p class="error-message"></p>
+      </div>
     </div>
+    <div class="login-field-container">
+      <p class="login-field-label">Hasło</p>
+      <div class="login-input-container">
+        <input type="text" class="login-input" placeholder="Hasło" />
+        <p class="error-message"></p>
+      </div>
+    </div>
+    <a class="login-forgot-password" routerLink="/regain-access">
+      Nie pamiętasz hasła?
+    </a>
+    <div class="login-bottom-container">
+      <div class="login-remember-me-container">
+        <p-checkbox [binary]="true" inputId="binary"></p-checkbox>
+        <label class="login-remember-me-text" for="binary"
+          >Zapamiętaj mnie</label
+        >
+      </div>
+      <p-button label="zaloguj się" styleClass="login-button"></p-button>
+    </div>
+    <hr />
+    <div class="login-footer">
+      <p class="login-footer-question">Nie masz jeszcze konta?</p>
+      <p-button
+        label="zarejestruj się w spotify"
+        class="login-register-button"
+        routerLink="/register"></p-button>
+    </div>
+  </div>
 </div>
