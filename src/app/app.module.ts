@@ -15,6 +15,7 @@ import { FavoriteComponent } from './layout/components/favorite/favorite.compone
 import { TrackComponent } from './layout/components/track/track.component';
 import {ButtonModule} from 'primeng/button';
 import {CheckboxModule} from 'primeng/checkbox';
+import {InputTextModule} from 'primeng/inputtext';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import {CheckboxModule} from 'primeng/checkbox';
     AppRoutingModule,
     DropdownModule,
     ButtonModule,
-    CheckboxModule
+    CheckboxModule,
+    InputTextModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,10 @@
+@import '../../_variables.scss';
+
+.layout-container {
+  display: flex;
+}
+
+.router-container {
+  padding-top: $spotify-header-height;
+  width: 100%;
+}

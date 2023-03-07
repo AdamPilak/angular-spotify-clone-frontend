@@ -1,3 +1,5 @@
+@import './variables';
+
 *,
 *::before,
 *::after {
@@ -5,13 +7,48 @@
   margin: 0;
   padding: 0;
 
-  :not(i, i::before, i::after) {
+  :not(i, i::before, i::after), ::placeholder {
     font-family: 'Rubik', sans-serif;
   }
 }
 
 body {
+  background: #111;
   font-size: 1rem;
   font-family: 'Rubik', sans-serif;
   min-height: 100vh;
 }
+
+p-button {
+  cursor: pointer;
+  button {
+    display: flex;
+    justify-content: center;
+    border-radius: 3rem !important;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem !important;
+    padding: $spotify-button-and-input-vertical-padding 0 !important;
+    border: 1px solid $spotify-grey-color !important;
+    gap: 0.5rem;
+    transition: 0s !important;
+
+    &:hover {
+      border-color: $spotify-black-color !important;
+    }
+
+    .fa {
+      font-size: 1.2rem;
+    }
+
+    .p-button-label {
+      flex: none;
+    }
+  }
+}
+
+input {
+  
+}
+

@@ -1,0 +1,102 @@
+@import '../../../../_variables.scss';
+
+.nav-sidebar-container {
+  width: $spotify-sidebar-width;
+  height: 100vh;
+  background: $sporify-sidebar-color;
+}
+
+.nav-header-container {
+  position: absolute;
+  top: 0;
+  left: $spotify-sidebar-width;
+  display: flex;
+  justify-content: space-between;
+  height: $spotify-header-height;
+  padding: $spotify-header-vertical-padding 2rem
+    $spotify-header-vertical-padding 3rem;
+  width: calc(100% - $spotify-sidebar-width);
+  background: $spotify-header-color;
+  color: $spotify-grey-color;
+
+  .nav-header-left-container {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    gap: 2rem;
+
+    .nav-header-navigation-icon {
+      font-size: 1.2rem;
+    }
+
+    .p-input-icon-left {
+      max-width: 360px;
+      width: 100%;
+
+      .nav-header-input-icon {
+        font-size: 1.1rem;
+        color: $spotify-black-color;
+        font-weight: 600;
+      }
+
+      .nav-header-input {
+        width: 100%;
+        height: calc(
+          $spotify-header-height - (2 * $spotify-header-vertical-padding)
+        );
+        border-radius: 3rem;
+        border: none;
+        background: $spotify-white-color;
+        font-size: 0.9rem;
+        padding-left: 3rem;
+      }
+    }
+  }
+
+  .nav-header-right-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-grow: 1;
+    gap: 2rem;
+
+    .nav-header-link-container {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .nav-header-link {
+        font-weight: 600;
+        letter-spacing: 1px;
+        cursor: pointer;
+
+        &:hover {
+            scale: $spotify-hover-scale;
+            color: $spotify-white-color;
+        }
+    }
+
+    .nav-header-divider {
+      border-left: 1px solid white;
+      height: calc(
+        $spotify-header-height - (3 * $spotify-header-vertical-padding)
+      );
+    }
+
+    ::ng-deep {
+      .nav-header-logout-button {
+        button {
+          padding: $spotify-button-and-input-vertical-padding 2rem !important;
+          text-transform: none;
+          background: $spotify-white-color;
+          color: $spotify-black-color;
+          border: none !important;
+
+          &:hover {
+            scale: $spotify-hover-scale;
+          }
+        }
+      }
+    }
+  }
+}
