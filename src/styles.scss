@@ -7,7 +7,8 @@
   margin: 0;
   padding: 0;
 
-  :not(i, i::before, i::after), ::placeholder {
+  :not(i, i::before, i::after),
+  ::placeholder {
     font-family: 'Rubik', sans-serif;
   }
 }
@@ -22,6 +23,7 @@ body {
 p-button {
   cursor: pointer;
   button {
+    box-shadow: none !important;
     display: flex;
     justify-content: center;
     border-radius: 3rem !important;
@@ -47,8 +49,3 @@ p-button {
     }
   }
 }
-
-input {
-  
-}
-

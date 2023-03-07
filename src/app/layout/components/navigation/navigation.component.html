@@ -1,5 +1,10 @@
-<div class="nav-sidebar-container"></div>
+<div class="nav-sidebar-container" [ngClass]="{'show' : isSidebarExpanded == true}">
+    
+</div>
 <div class="nav-header-container">
+    <div class="nav-header-burger-icon-container">
+        <i class="nav-header-burger-icon pi pi-bars" (click)="isSidebarExpanded = !isSidebarExpanded"></i>
+    </div>
     <div class="nav-header-left-container">
         <i class="nav-header-navigation-icon fa-solid fa-chevron-left"></i>
         <i class="nav-header-navigation-icon fa-solid fa-chevron-right"></i>

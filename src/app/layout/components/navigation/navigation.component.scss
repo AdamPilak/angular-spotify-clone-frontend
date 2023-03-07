@@ -4,6 +4,7 @@
   width: $spotify-sidebar-width;
   height: 100vh;
   background: $sporify-sidebar-color;
+  transition: 0.3s;
 }
 
 .nav-header-container {
@@ -13,11 +14,23 @@
   display: flex;
   justify-content: space-between;
   height: $spotify-header-height;
-  padding: $spotify-header-vertical-padding 2rem
-    $spotify-header-vertical-padding 3rem;
+  padding: $spotify-header-vertical-padding 2rem;
   width: calc(100% - $spotify-sidebar-width);
+  gap: 1rem;
   background: $spotify-header-color;
   color: $spotify-grey-color;
+  transition: 0.3s;
+
+  .nav-header-burger-icon-container {
+    display: none;
+    align-items: center;
+
+    .nav-header-burger-icon {
+      color: $spotify-grey-color;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  }
 
   .nav-header-left-container {
     display: flex;
@@ -27,6 +40,7 @@
 
     .nav-header-navigation-icon {
       font-size: 1.2rem;
+      cursor: pointer;
     }
 
     .p-input-icon-left {
@@ -61,19 +75,19 @@
     gap: 2rem;
 
     .nav-header-link-container {
-        display: flex;
-        gap: 1rem;
-    }
+      display: flex;
+      gap: 1rem;
 
-    .nav-header-link {
+      .nav-header-link {
         font-weight: 600;
         letter-spacing: 1px;
         cursor: pointer;
 
         &:hover {
-            scale: $spotify-hover-scale;
-            color: $spotify-white-color;
+          scale: $spotify-hover-scale;
+          color: $spotify-white-color;
         }
+      }
     }
 
     .nav-header-divider {
@@ -98,5 +112,44 @@
         }
       }
     }
+  }
+}
+
+@media (max-width: 992px) {
+  .nav-header-link-container,
+  .nav-header-divider {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-header-container {
+    left: 0;
+    width: 100%;
+    padding: $spotify-header-vertical-padding 1rem
+      $spotify-header-vertical-padding 1rem;
+    gap: 1.5rem;
+
+    .nav-header-burger-icon-container {
+      display: flex;
+    }
+
+    .nav-header-left-container {
+      i:not(.pi-search) {
+        display: none;
+      }
+    }
+  }
+
+  .nav-sidebar-container {    
+    position: absolute;
+    top: $spotify-header-height;
+    bottom: 0;
+    height: auto;
+    width: 0;
+  }
+
+  .show {
+    width: $spotify-sidebar-width;
   }
 }
