@@ -2,7 +2,7 @@
 
 hr {
   margin: 12px 0 30px;
-  border-color: $spotify-white-color;
+  border-color: white;
 }
 
 //buttons and checkbox start
@@ -34,7 +34,7 @@ hr {
     border: none !important;
 
     &:hover {
-      scale: $spotify-hover-scale;
+      scale: 1.05;
       background: $spotify-brighter-green-color !important;
     }
   }

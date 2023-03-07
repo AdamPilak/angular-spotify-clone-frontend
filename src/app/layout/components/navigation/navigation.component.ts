@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
@@ -9,9 +10,14 @@ export class NavigationComponent implements OnInit {
 
   isSidebarExpanded: boolean = false;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+  
+  logOut(): void {
+    localStorage.removeItem('user');
+    this.router.navigate(['/login']);
   }
 
 }

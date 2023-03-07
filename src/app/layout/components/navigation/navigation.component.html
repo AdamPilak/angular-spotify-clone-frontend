@@ -1,5 +1,5 @@
 <div class="nav-sidebar-container" [ngClass]="{'show' : isSidebarExpanded == true}">
-    
+
 </div>
 <div class="nav-header-container">
     <div class="nav-header-burger-icon-container">
@@ -20,6 +20,6 @@
             <a class="nav-header-link">Pobierz</a>
         </div>
         <span class="nav-header-divider"></span>
-        <p-button class="nav-header-logout-button" label="Wyloguj się"></p-button>
+        <p-button class="nav-header-logout-button" label="Wyloguj się" (click)="logOut()"></p-button>
     </div>
 </div>

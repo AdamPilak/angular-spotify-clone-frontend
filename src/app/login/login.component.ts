@@ -15,8 +15,4 @@ export class LoginComponent implements OnInit {
     localStorage.setItem('user', 'user');
     this.router.navigate(['home']);
   }
-
-  logOut(): void {
-    localStorage.removeItem('user');
-  }
 }
