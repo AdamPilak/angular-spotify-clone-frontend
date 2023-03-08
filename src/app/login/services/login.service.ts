@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -10,10 +10,12 @@ export class LoginService {
 
   constructor(private http: HttpClient) {}
 
-  Login(email: string, password: string): Observable<Object> {
-    return this.http.post(`${this.environmentUrl}/auth/login`, {
-      email: email,
-      password: password,
-    });
+  Login(email: string, password: string): Observable<string> {
+    return this.http
+      .post(`${this.environmentUrl}/auth/login`, {
+        email: email,
+        password: password,
+      })
+      .pipe(map(response => response.toString()));
   }
 }

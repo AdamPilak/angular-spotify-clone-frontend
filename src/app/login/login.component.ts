@@ -20,11 +20,11 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.loginSubscriber = this.loginService
       .Login(email, password)
       .subscribe(data => {
-        if (data.toString() === 'Poprawne logowanie') {
+        if (data === 'Poprawne logowanie') {
           localStorage.setItem('user', 'user');
           this.router.navigate(['home']);
         } else {
-          this.loginError = data.toString();
+          this.loginError = data;
         }
       });
   }
