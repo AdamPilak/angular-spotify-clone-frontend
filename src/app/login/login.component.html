@@ -21,35 +21,46 @@
         class="login-button-google"></p-button>
     </div>
     <hr />
-    <div class="login-field-container">
-      <p class="login-field-label">Adres e-mail</p>
-      <div class="login-input-container">
-        <input type="text" class="login-input" placeholder="Adres e-mail" />
-        <p class="error-message"></p>
+    <form>
+      <div class="login-field-container">
+        <p class="login-field-label">Adres e-mail</p>
+        <div class="login-input-container">
+          <input
+            #email
+            type="text"
+            class="login-input"
+            placeholder="Adres e-mail" />
+          <p class="error-message"></p>
+        </div>
       </div>
-    </div>
-    <div class="login-field-container">
-      <p class="login-field-label">Hasło</p>
-      <div class="login-input-container">
-        <input type="text" class="login-input" placeholder="Hasło" />
-        <p class="error-message"></p>
+      <div class="login-field-container">
+        <p class="login-field-label">Hasło</p>
+        <div class="login-input-container">
+          <input
+            #password
+            type="password"
+            class="login-input"
+            placeholder="Hasło" />
+          <p class="error-message"></p>
+        </div>
       </div>
-    </div>
-    <a routerLink="/regain-access">
-      <p class="login-forgot-password" >Nie pamiętasz hasła?</p>
-    </a>
-    <div class="login-bottom-container">
-      <div class="login-remember-me-container">
-        <p-checkbox [binary]="true" inputId="binary"></p-checkbox>
-        <label class="login-remember-me-text" for="binary"
-          >Zapamiętaj mnie</label
-        >
+      <p style="color: red">{{ loginError }}</p>
+      <a routerLink="/regain-access">
+        <p class="login-forgot-password">Nie pamiętasz hasła?</p>
+      </a>
+      <div class="login-bottom-container">
+        <div class="login-remember-me-container">
+          <p-checkbox [binary]="true" inputId="binary"></p-checkbox>
+          <label class="login-remember-me-text" for="binary"
+            >Zapamiętaj mnie</label
+          >
+        </div>
+        <p-button
+          label="zaloguj się"
+          styleClass="login-button"
+          (onClick)="Login(email.value, password.value)"></p-button>
       </div>
-      <p-button
-        label="zaloguj się"
-        styleClass="login-button"
-        (onClick)="addUser()"></p-button>
-    </div>
+    </form>
     <hr />
     <div class="login-footer">
       <p class="login-footer-question">Nie masz jeszcze konta?</p>

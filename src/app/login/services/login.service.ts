@@ -6,10 +6,12 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class LoginService {
+  environmentUrl: string = 'http://localhost:8000/api';
+
   constructor(private http: HttpClient) {}
 
   Login(email: string, password: string): Observable<Object> {
-    return this.http.post('http://127.0.0.1:8000/auth/login', {
+    return this.http.post(`${this.environmentUrl}/auth/login`, {
       email: email,
       password: password,
     });

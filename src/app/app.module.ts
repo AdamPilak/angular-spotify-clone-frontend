@@ -16,6 +16,7 @@ import { TrackComponent } from './layout/components/track/track.component';
 import {ButtonModule} from 'primeng/button';
 import {CheckboxModule} from 'primeng/checkbox';
 import {InputTextModule} from 'primeng/inputtext';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import {InputTextModule} from 'primeng/inputtext';
     DropdownModule,
     ButtonModule,
     CheckboxModule,
-    InputTextModule
+    InputTextModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
