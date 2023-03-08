@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import {
   ActivatedRoute,
   ChildActivationStart,
@@ -12,21 +12,25 @@ import { filter, Subscribable, Subscription } from 'rxjs';
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss'],
 })
-export class NavigationComponent implements OnInit {
+export class NavigationComponent implements OnInit, OnDestroy {
   isSidebarExpanded: boolean = false;
   actualPage: string = '';
   routeParamsSubscription?: Subscription;
 
-  constructor(public router: Router, private route: ActivatedRoute) {}
+  constructor(public router: Router) {}
 
   ngOnInit(): void {
     this.actualPage = this.router.routerState.snapshot.url;
 
-    this.router.events
+    this.routeParamsSubscription = this.router.events
     .pipe(filter(event => event instanceof NavigationStart))
     .subscribe(event => {
       this.actualPage = (event as NavigationStart).url;
     });
+  }
+
+  ngOnDestroy(): void {
+    this.routeParamsSubscription?.unsubscribe();
   }
 
   logOut(): void {

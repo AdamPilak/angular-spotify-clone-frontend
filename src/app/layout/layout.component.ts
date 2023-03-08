@@ -8,9 +8,7 @@ import { filter, Subscription } from 'rxjs';
   styleUrls: ['./layout.component.scss'],
 })
 export class LayoutComponent implements OnInit {
-  constructor(private route: ActivatedRoute, private router: Router) {}
-
-  routeParamsSubscription?: Subscription;
+  constructor() {}
 
   ngOnInit(): void {
 
