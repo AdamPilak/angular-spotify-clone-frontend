@@ -1,5 +1,28 @@
 <div class="nav-sidebar-container" [ngClass]="{'show' : isSidebarExpanded == true}">
-
+    <div class="nav-sidebar-top-container">
+        <div class="nav-sidebar-header-container">
+            <i class="nav-sidebar-header-icon fa-brands fa-spotify"></i>
+            <p class="nav-sidebar-header-text">Spotify</p>
+        </div>
+        <div class="nav-sidebar-navigation-container">
+            <a class="nav-sidebar-navigation-row" [routerLink]="'home'"
+                [ngStyle]="{color: actualPage == '/home' ? 'white' : null}">
+                <i class="nav-sidebar-navigation-icon fa-solid fa-house"></i>
+                <p class="nav-sidebar-navigation-text">Home</p>
+            </a>
+            <a class="nav-sidebar-navigation-row" [routerLink]="'search'"
+                [ngStyle]="{color: actualPage == '/search' ? 'white' : null}">
+                <i class="nav-sidebar-navigation-icon fa-solid fa-search"></i>
+                <p class="nav-sidebar-navigation-text">Szukaj</p>
+            </a>
+            <a class="nav-sidebar-navigation-row" [routerLink]="'favorite'"
+                [ngStyle]="{color: actualPage == '/favorite' ? 'white' : null}">
+                <i class="nav-sidebar-navigation-icon fa-solid fa-heart"></i>
+                <p class="nav-sidebar-navigation-text">Ulubione</p>
+            </a>
+        </div>
+    </div>
+    <div class="nav-sidebar-bottom-container"></div>
 </div>
 <div class="nav-header-container">
     <div class="nav-header-burger-icon-container">
