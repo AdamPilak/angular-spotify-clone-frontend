@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { environmentUrl } from 'src/environments/environment';
 
 @Injectable({
@@ -10,9 +10,19 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  checkIfTokenExists(userId: string, token: string): Observable<any> {
-    return this.http.post(`${environmentUrl}/auth/checkToken`, {'userId': userId, 'token': token});
+  checkIfTokenExists(email: string, token: string): Observable<any> {
+    return this.http.post(`${environmentUrl}/auth/checkToken`, {'email': email, 'token': token});
   }
 
-  
+  deleteToken(email: string): Observable<any> {
+    const options = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+      body: {
+        email: email
+      },
+    };
+    return this.http.delete(`${environmentUrl}/auth/logout`, options);
+  }
 }
