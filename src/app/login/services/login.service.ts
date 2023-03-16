@@ -10,12 +10,10 @@ export class LoginService {
 
   constructor(private http: HttpClient) {}
 
-  Login(email: string, password: string): Observable<string> {
-    return this.http
-      .post(`${this.environmentUrl}/auth/login`, {
-        email: email,
-        password: password,
-      })
-      .pipe(map(response => response.toString()));
+  Login(email: string, password: string): Observable<Object> {
+    return this.http.post<Object>(`${this.environmentUrl}/auth/login`, {
+      email: email,
+      password: password,
+    });
   }
 }
