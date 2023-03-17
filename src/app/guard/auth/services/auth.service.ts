@@ -4,14 +4,16 @@ import { map, Observable } from 'rxjs';
 import { environmentUrl } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   checkIfTokenExists(email: string, token: string): Observable<any> {
-    return this.http.post(`${environmentUrl}/auth/checkToken`, {'email': email, 'token': token});
+    return this.http.post(`${environmentUrl}/auth/checkToken`, {
+      email: email,
+      token: token,
+    });
   }
 
   deleteToken(email: string): Observable<any> {
@@ -20,7 +22,7 @@ export class AuthService {
         'Content-Type': 'application/json',
       }),
       body: {
-        email: email
+        email: email,
       },
     };
     return this.http.delete(`${environmentUrl}/auth/logout`, options);

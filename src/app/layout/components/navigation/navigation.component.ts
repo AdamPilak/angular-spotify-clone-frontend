@@ -31,7 +31,9 @@ export class NavigationComponent implements OnInit, OnDestroy {
     if (email) {
       this.deleteTokenSubscription = this.authService
         .deleteToken(email)
-        .subscribe();
+        .subscribe(() => {
+          this.deleteTokenSubscription?.unsubscribe();
+        });
     }
     localStorage.clear();
     this.router.navigate(['/login']);
@@ -39,6 +41,5 @@ export class NavigationComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.routeParamsSubscription?.unsubscribe();
-    this.deleteTokenSubscription?.unsubscribe();
   }
 }
