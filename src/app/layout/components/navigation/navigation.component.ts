@@ -33,6 +33,7 @@ export class NavigationComponent implements OnInit, OnDestroy {
         .deleteToken(email)
         .subscribe();
     }
+    localStorage.clear();
     this.router.navigate(['/login']);
   }
 

@@ -29,7 +29,6 @@ export class LoggedUserGuard implements CanActivate {
     }
 
     this.location.back();
-
     return false;
   }
 }
