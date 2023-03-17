@@ -20,13 +20,27 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.loginSubscriber = this.loginService
       .Login(email, password)
       .subscribe(data => {
-        if (data === 'Poprawne logowanie') {
-          localStorage.setItem('user', 'user');
+        if (data.responseId === 40) {
+          localStorage.setItem('email', data.email!);
+          localStorage.setItem('token', data.token!);
           this.router.navigate(['home']);
         } else {
-          this.loginError = data;
+          this.setErrorMessage(data.responseId);
         }
       });
+  }
+
+  setErrorMessage(responseId: number): void {
+    switch (responseId) {
+      case 10:
+        this.loginError = 'Niepoprawny email lub hasło';
+        break;
+      case 20:
+        this.loginError = 'Uzytkownik zablokowany tymczasowo';
+        break;
+      case 30:
+        this.loginError = 'Uzytkownik zablokowany na stałe';
+    }
   }
 
   ngOnDestroy(): void {

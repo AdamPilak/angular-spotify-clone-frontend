@@ -23,12 +23,13 @@ export class LoggedUserGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    const userFromStorage = localStorage.getItem('user');
-    if (!userFromStorage) {
+    const emailFromStorage = localStorage.getItem('email');
+    if (!emailFromStorage) {
       return true;
     }
 
     this.location.back();
+
     return false;
   }
 }

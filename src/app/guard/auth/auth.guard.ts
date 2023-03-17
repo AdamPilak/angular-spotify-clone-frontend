@@ -6,13 +6,14 @@ import {
   RouterStateSnapshot,
   UrlTree,
 } from '@angular/router';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
+import { AuthService } from './services/auth.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authService: AuthService) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -22,12 +23,24 @@ export class AuthGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    const userFromStorage = localStorage.getItem('user');
-    if (userFromStorage) {
-      return true;
-    }
+    const emailFromStorage = localStorage.getItem('email');
+    const tokenFromStorage = localStorage.getItem('token');
 
-    this.router.navigate(['/login']);
+    if (emailFromStorage && tokenFromStorage) {
+      return this.authService
+        .checkIfTokenExists(emailFromStorage, tokenFromStorage)
+        .pipe(
+          map(isTokenValid => {
+            if (!isTokenValid) {
+              localStorage.clear();
+              return this.router.navigate(['/login']);
+            }
+            return isTokenValid;
+          })
+        );
+    }
+    localStorage.clear();
+    this.router.navigate(['login']);
     return false;
   }
 }
