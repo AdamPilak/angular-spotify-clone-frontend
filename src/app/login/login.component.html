@@ -7,6 +7,10 @@
   <div class="login-content">
     <div class="login-options">
       <p class="login-options-text">Aby kontynuować, zaloguj się do Spotify.</p>
+      <div *ngIf="loginError" class="error-message">
+        <i class="error-message-icon fa-solid fa-circle-exclamation"></i>
+        <p class="error-message-text">{{loginError}}</p>
+      </div>
       <p-button
         label="kontynuuj z facebookiem"
         icon="fa brands fa-facebook"
@@ -24,27 +28,20 @@
     <form>
       <div class="login-field-container">
         <p class="login-field-label">Adres e-mail</p>
-        <div class="login-input-container">
           <input
             #email
             type="text"
             class="login-input"
             placeholder="Adres e-mail" />
-          <p class="error-message"></p>
-        </div>
       </div>
       <div class="login-field-container">
         <p class="login-field-label">Hasło</p>
-        <div class="login-input-container">
-          <input
-            #password
-            type="password"
-            class="login-input"
-            placeholder="Hasło" />
-          <p class="error-message"></p>
-        </div>
+        <input
+          #password
+          type="password"
+          class="login-input"
+          placeholder="Hasło" />
       </div>
-      <p style="color: red">{{ loginError }}</p>
       <a routerLink="/regain-access">
         <p class="login-forgot-password">Nie pamiętasz hasła?</p>
       </a>

@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   setErrorMessage(responseId: number): void {
     switch (responseId) {
       case 10:
-        this.loginError = 'Niepoprawny email lub hasło';
+        this.loginError = 'Nieprawidłowa nazwa uzytkownika lub błędne hasło.';
         break;
       case 20:
         this.loginError = 'Uzytkownik zablokowany tymczasowo';

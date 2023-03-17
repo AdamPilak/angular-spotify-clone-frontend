@@ -100,7 +100,7 @@ hr {
   }
 
   .login-content {
-    max-width: 450px;
+    max-width: calc(450px + 2rem);
     width: 100%;
     margin: 1rem auto 0;
     padding: 1rem;
@@ -131,20 +131,16 @@ hr {
       }
     }
 
-    .login-input-container {
-      display: flex;
-      flex-direction: column;
+    .login-input {
+      font-size: 0.9rem;
+      padding: 0.9rem;
+      border: 1px solid $spotify-grey-color;
+      width: 100%;
+      border-radius: 0.15rem;
+      font-weight: 600;
 
-      .login-input {
-        font-size: 0.9rem;
-        padding: 0.9rem;
-        border: 1px solid $spotify-grey-color;
-        border-radius: 0.15rem;
-        font-weight: 600;
-
-        &:focus {
-          outline: $spotify-black-color solid 2px;
-        }
+      &:focus {
+        outline: $spotify-black-color solid 2px;
       }
     }
 
@@ -178,6 +174,26 @@ hr {
         margin-bottom: 1.5rem;
       }
     }
+  }
+}
+
+.error-message {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 1.5rem; 
+  color: white;
+  background: #e91429ed;
+
+  .error-message-icon {
+    font-size: 1.5rem;
+    align-self: flex-start;
+  }
+
+  .error-message-text {
+    font-size: .9rem;
+    margin-left: 1rem;
+    margin-bottom: 0 !important;
   }
 }
 
