@@ -1,4 +1,4 @@
-<div class="login-container">
+<div *ngIf="loginFormModel" class="login-container">
   <div class="login-header">
     <i class="login-header-icon fa-brands fa-spotify"></i>
     <p class="login-header-text">Spotify</p>
@@ -25,22 +25,36 @@
         class="login-button-google"></p-button>
     </div>
     <hr />
-    <form>
+    <form #loginForm="ngForm" (ngSubmit)="Login()">
       <div class="login-field-container">
         <p class="login-field-label">Adres e-mail</p>
           <input
-            #email
+            name="email"
             type="text"
             class="login-input"
-            placeholder="Adres e-mail" />
+            placeholder="Adres e-mail"
+            ngModel
+            (ngModel)="loginFormModel.email" />
       </div>
       <div class="login-field-container">
         <p class="login-field-label">Hasło</p>
         <input
-          #password
+          name="password"
           type="password"
           class="login-input"
-          placeholder="Hasło" />
+          placeholder="Hasło"
+          ngModel
+          (ngModel)="loginFormModel.password" />
+      </div>
+      <div *ngIf="loginFormModel.authorizationCode !== undefined" class="login-field-container">
+        <p class="login-field-label">Kod autoryzacyjny</p>
+        <input
+          name="authorizationCode"
+          type="text"
+          class="login-input"
+          placeholder="Kod autoryzacyjny"
+          (ngModel)="loginFormModel.authorizationCode"
+          ngModel />
       </div>
       <a routerLink="/regain-access">
         <p class="login-forgot-password">Nie pamiętasz hasła?</p>
@@ -53,9 +67,9 @@
           >
         </div>
         <p-button
+          type="submit"
           label="zaloguj się"
-          styleClass="login-button"
-          (onClick)="Login(email.value, password.value)"></p-button>
+          styleClass="login-button" (click)="abc(loginForm)"></p-button>
       </div>
     </form>
     <hr />
