@@ -1,1 +1,64 @@
-<p>register works!</p>
+<div class="register-container">
+    <div class="register-header">
+      <i class="register-header-icon fa-brands fa-spotify"></i>
+      <p class="register-header-text">SpotifyExample</p>
+    </div>
+    <hr style="margin: 0" />
+    <div class="register-content">
+    <h1 class="register-title">Zarejestruj się w SpotifyExample!</h1>
+      <form>
+        <div class="register-field-container">
+          <p class="register-field-label">Imię</p>
+            <input
+              #name
+              type="text"
+              class="register-input"
+              placeholder="Imię" />
+        </div>
+        <div class="register-field-container">
+          <p class="register-field-label">Nazwisko</p>
+          <input
+            #surname
+            type="text"
+            class="register-input"
+            placeholder="Nazwisko" />
+        </div>
+        <div class="register-field-container">
+            <p class="register-field-label">Nazwa uzytkownika</p>
+            <input
+                #username
+                type="text"
+                class="register-input"
+                placeholder="Nazwa uzytkownika" />
+        </div>
+        <div class="register-field-container">
+            <p class="register-field-label">Email</p>
+            <input
+                #email
+                type="text"
+                class="register-input"
+                placeholder="Email" />
+        </div>
+        <div class="register-field-container">
+            <p class="register-field-label">Hasło</p>
+            <input
+                #password
+                type="password"
+                class="register-input"
+                placeholder="Hasło" />
+        </div>
+        <p-button
+        label="zarejestruj się"
+        styleClass="register-button"></p-button>
+      </form>
+      <hr />
+      <div class="register-footer">
+        <p class="register-footer-question">Masz juz konto?</p>
+        <p-button
+          label="zaloguj się do spotify"
+          class="register-login-button"
+          routerLink="/login"></p-button>
+      </div>
+    </div>
+  </div>
+  

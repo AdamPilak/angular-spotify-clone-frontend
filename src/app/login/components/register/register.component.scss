@@ -1,0 +1,164 @@
+@import "../../../../variables";
+
+hr {
+  margin: 12px 0 30px;
+  border-color: white;
+}
+
+//buttons and checkbox start
+::ng-deep {
+
+  .register-button {
+    margin: 2rem 0 .5rem 0;
+    padding: 1rem 2rem !important;
+    color: $spotify-black-color !important;
+    background: $spotify-green-color !important;
+    border: none !important;
+
+    &:hover {
+      scale: 1.05;
+      background: $spotify-brighter-green-color !important;
+    }
+  }
+
+  .register-login-button {
+    button {
+      background: $spotify-white-color !important;
+      color: $spotify-grey-color !important;
+    }
+  }
+}
+
+//buttons and checkbox end
+
+//register start
+
+.register-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  background: $spotify-white-color;
+
+  .register-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+
+    .register-header-icon {
+      font-size: 2.8rem;
+      margin-right: 0.3rem;
+    }
+
+    .register-header-text {
+      font-weight: 500;
+      font-size: 1.7rem;
+    }
+  }
+
+  .register-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+
+  .register-content {
+    max-width: calc(450px + 2rem);
+    width: 100%;
+    margin: 1rem auto 0;
+    padding: 1rem;
+
+    .register-options {
+      display: flex;
+      flex-direction: column;
+
+      p,
+      p-button {
+        margin-bottom: 0.75rem;
+      }
+
+      .register-options-text {
+        font-weight: 600;
+        font-size: 0.85rem;
+        text-align: center;
+      }
+    }
+
+    .register-field-container {
+      margin-bottom: 1rem;
+
+      .register-field-label {
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .register-input {
+      font-size: 0.9rem;
+      padding: 0.9rem;
+      border: 1px solid $spotify-grey-color;
+      width: 100%;
+      border-radius: 0.15rem;
+      font-weight: 600;
+
+      &:focus {
+        outline: $spotify-black-color solid 2px;
+      }
+    }
+
+    .register-forgot-password {
+      color: $spotify-black-color;
+      font-size: 1rem;
+      text-decoration: underline;
+      margin-bottom: 1.5rem;
+    }
+
+    .register-bottom-container {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .register-remember-me-text {
+        font-size: 0.9rem;
+      }
+    }
+
+    .register-footer {
+      .register-footer-question {
+        text-align: center;
+        font-size: 1.1rem;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+}
+
+.error-message {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 1.5rem; 
+  color: white;
+  background: #e91429ed;
+
+  .error-message-icon {
+    font-size: 1.5rem;
+    align-self: flex-start;
+  }
+
+  .error-message-text {
+    font-size: .9rem;
+    margin-left: 1rem;
+    margin-bottom: 0 !important;
+  }
+}
+
+//register end
