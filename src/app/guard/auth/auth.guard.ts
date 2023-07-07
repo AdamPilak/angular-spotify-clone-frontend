@@ -23,24 +23,25 @@ export class AuthGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    const emailFromStorage = localStorage.getItem('email');
-    const tokenFromStorage = localStorage.getItem('token');
+    // const emailFromStorage = localStorage.getItem('email');
+    // const tokenFromStorage = localStorage.getItem('token');
 
-    if (emailFromStorage && tokenFromStorage) {
-      return this.authService
-        .checkIfTokenExists(emailFromStorage, tokenFromStorage)
-        .pipe(
-          map(isTokenValid => {
-            if (!isTokenValid) {
-              localStorage.clear();
-              return this.router.navigate(['/login']);
-            }
-            return isTokenValid;
-          })
-        );
-    }
-    localStorage.clear();
-    this.router.navigate(['login']);
-    return false;
+    // if (emailFromStorage && tokenFromStorage) {
+    //   return this.authService
+    //     .checkIfTokenExists(emailFromStorage, tokenFromStorage)
+    //     .pipe(
+    //       map(isTokenValid => {
+    //         if (!isTokenValid) {
+    //           localStorage.clear();
+    //           return this.router.navigate(['/login']);
+    //         }
+    //         return isTokenValid;
+    //       })
+    //     );
+    // }
+    // localStorage.clear();
+    // this.router.navigate(['login']);
+    // return false;
+    return true;
   }
 }

@@ -13,7 +13,7 @@ import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
-  { path: '', component: LayoutComponent, canActivate: [AuthGuard], 
+  { path: '', component: LayoutComponent, canActivate: [AuthGuard],
     children: [
       { path: 'home', component: HomeComponent,},
       { path: 'search', component: SearchComponent, },
